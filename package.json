@@ -1,10 +1,9 @@
 {
   "name": "my-discord",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "discord clone",
+  "author": "KIM Se Hyung",
   "private": true,
-  "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -20,13 +19,24 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@mikro-orm/core": "^6.4.11",
+    "@mikro-orm/migrations": "^6.4.11",
+    "@mikro-orm/nestjs": "^6.1.1",
+    "@mikro-orm/postgresql": "^6.4.11",
+    "@mikro-orm/reflection": "^6.4.11",
+    "@mikro-orm/seeder": "^6.4.11",
+    "@mikro-orm/sql-highlighter": "^1.0.1",
     "@nestjs/common": "^10.0.0",
+    "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
+    "dotenv": "^16.4.7",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@mikro-orm/cli": "^6.4.11",
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
@@ -48,7 +58,9 @@
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.3",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -66,5 +78,11 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "mikro-orm": {
+    "configPaths": [
+      "./src/mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
+    ]
   }
 }
